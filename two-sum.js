@@ -20,3 +20,24 @@ var twoSum = function(nums, target) {
 	}
 
 };
+
+
+//different way to do it using methods
+// function whatsLeft (toGet, inCart) {
+// 	return toGet.filter(item => {
+// 		return !inCart.includes(item)
+// 	})
+// }
+
+const twoSum = (array, target) => {
+	const set = new Set()
+	for (let i = 0; i<array.length; i++) {
+		set.add(array[i])
+	}
+	for (let i = 0; i<array.length; i++) {
+		const num = target - array[i]
+		if(set.has(num)) {
+			return [array[i], num]
+		}
+	}
+}
